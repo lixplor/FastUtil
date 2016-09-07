@@ -1,5 +1,5 @@
 # Anutil
-A collection of utils for android fast development.
+A collection of utilities for android fast development.
 
 ```
 Still in progress. Do not use.
