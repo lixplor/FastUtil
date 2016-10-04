@@ -53,6 +53,9 @@ public class ShellCmdUtil {
     public static final String COMMAND_IS_DEBUG_SIGN = "jarsigner -verify -verbose -certs %s"; //apk path
     public static final String COMMAND_SCREENRECORD = "screenrecord --time-limit %s --size %s --bit-rate %s %s"; //record time(180s default), resolution(eg 720x1280, default phone resolution), bitrate(6000000), file path
     public static final String COMMAND_SCREENSHOT = "screencap -p %s"; //file path
+    public static final String COMMAND_ADB_WIFI = "adb tcpip " + 5555; //start WIFI adb at port
+    public static final String COMMAND_ADB_START = "adb start-server"; //start WIFI adb at port
+    public static final String COMMAND_ADB_STOP = "adb kill-server"; //start WIFI adb at port
 
     private ShellCmdUtil() throws IllegalAccessException {
         throw new IllegalAccessException("Instantiation is not allowed! Use static methods only!");

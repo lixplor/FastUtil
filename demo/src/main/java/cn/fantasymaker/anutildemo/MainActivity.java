@@ -66,6 +66,7 @@ import cn.fantasymaker.anutil.utils.control.SensorUtil;
 import cn.fantasymaker.anutil.utils.control.SettingUtil;
 import cn.fantasymaker.anutil.utils.control.ShareUtil;
 import cn.fantasymaker.anutil.utils.control.SmsUtil;
+import cn.fantasymaker.anutil.utils.control.ToastUtil;
 import cn.fantasymaker.anutil.utils.control.VibratorUtil;
 import cn.fantasymaker.anutil.utils.control.VolumeUtil;
 import cn.fantasymaker.anutil.utils.develop.AsyncTaskUtil;
@@ -175,7 +176,22 @@ public class MainActivity extends AppCompatActivity {
 
 //        testSmsUtil();
 
-//        String path = DirectoryUtil.getExternalDownloadDirPath() + "/screen-record.mp4";
+//        testScreenRecord();
+
+        ShellCmdUtil.CommandResult commandResult = ShellCmdUtil.execCommand(ShellCmdUtil.COMMAND_ADB_STOP, false);
+        LogUtil.d(commandResult.toString());
+        ToastUtil.toastLong(commandResult.toString());
+
+//        ShellCmdUtil.CommandResult commandResult = ShellCmdUtil.execCommand("echo hello", false);
+//        LogUtil.d("result=" + commandResult);
+
+//        List<ContactUtil.ContactBean> allContact = ContactUtil.getAllContact();
+//        LogUtil.d("contacts size =" + allContact.size());
+
+    }
+
+    private void testScreenRecord() {
+        //        String path = DirectoryUtil.getExternalDownloadDirPath() + "/screen-record.mp4";
         String path = DirectoryUtil.getExternalDownloadDirPath() + "/screen-shot.png";
 //        final String cmd = String.format(ShellCmdUtil.COMMAND_SCREENRECORD, "10", "720x1280", "6000000", path);
         final String cmd = String.format(ShellCmdUtil.COMMAND_SCREENSHOT, path);
@@ -187,14 +203,6 @@ public class MainActivity extends AppCompatActivity {
                 LogUtil.d(commandResult.toString());
             }
         }).start();
-
-
-//        ShellCmdUtil.CommandResult commandResult = ShellCmdUtil.execCommand("echo hello", false);
-//        LogUtil.d("result=" + commandResult);
-
-//        List<ContactUtil.ContactBean> allContact = ContactUtil.getAllContact();
-//        LogUtil.d("contacts size =" + allContact.size());
-
     }
 
     private void testVibratorUtil() {
