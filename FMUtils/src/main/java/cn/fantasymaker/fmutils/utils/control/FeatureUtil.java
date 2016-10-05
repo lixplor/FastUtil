@@ -20,31 +20,52 @@
  *     SOFTWARE.
  */
 
-package cn.fantasymaker.anutildemo;
+package cn.fantasymaker.fmutils.utils.control;
 
-import android.app.Application;
 import android.content.Context;
+import android.content.pm.FeatureInfo;
+import android.content.pm.PackageManager;
 
 import cn.fantasymaker.fmutils.utils.FMUtils;
 
 /**
- * Created :  2016-09-06
+ * Created :  2016-08-16
  * Author  :  Fantasymaker
  * Web     :  http://blog.fantasymaker.cn
  * Email   :  me@fantasymaker.cn
  */
-public class BaseApplication extends Application {
+public class FeatureUtil {
 
-    private static Context sContext;
+    /*
+    todo
+    x获取拥有的功能
+    x判断是否有某个功能
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sContext = this;
-        FMUtils.init(this);
+     */
+
+    private static Context sContext = FMUtils.getContext();
+    private static PackageManager sPackageManager = sContext.getPackageManager();
+
+    private FeatureUtil() throws IllegalAccessException {
+        throw new IllegalAccessException("Instantiation is not allowed! Use static methods only!");
     }
 
-    public static Context getContext(){
-        return sContext;
+    /**
+     * Get all system features
+     *
+     * @return array of FeatureInfo
+     */
+    public static FeatureInfo[] getAllFeatures() {
+        return sPackageManager.getSystemAvailableFeatures();
+    }
+
+    /**
+     * If system has a specific feature
+     *
+     * @param featureName feature name constant from PackageManager class
+     * @return true if has; Otherwise false
+     */
+    public static boolean hasFeature(String featureName) {
+        return sPackageManager.hasSystemFeature(featureName);
     }
 }

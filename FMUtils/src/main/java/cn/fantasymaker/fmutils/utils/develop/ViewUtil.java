@@ -20,31 +20,50 @@
  *     SOFTWARE.
  */
 
-package cn.fantasymaker.anutildemo;
+package cn.fantasymaker.fmutils.utils.develop;
 
-import android.app.Application;
-import android.content.Context;
-
-import cn.fantasymaker.fmutils.utils.FMUtils;
+import android.view.View;
+import android.view.ViewTreeObserver;
 
 /**
- * Created :  2016-09-06
+ * Created :  2016-08-12
  * Author  :  Fantasymaker
  * Web     :  http://blog.fantasymaker.cn
  * Email   :  me@fantasymaker.cn
  */
-public class BaseApplication extends Application {
+public class ViewUtil {
 
-    private static Context sContext;
+    /*
+    todo
+    显示隐藏
+    计算宽高
+    获取属性
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sContext = this;
-        FMUtils.init(this);
+     */
+
+    private ViewUtil() throws IllegalAccessException {
+        throw new IllegalAccessException("Instantiation is not allowed! Use static methods only!");
     }
 
-    public static Context getContext(){
-        return sContext;
+    public static int[] getWidthHeight(final View view) {
+        final int[] widthHeight = new int[2];
+        ViewTreeObserver viewTreeObserver = view.getViewTreeObserver();
+        viewTreeObserver.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            boolean hasMeasured = false;
+
+            @Override
+            public boolean onPreDraw() {
+                if (!hasMeasured) {
+                    int width = view.getMeasuredWidth();
+                    int height = view.getMeasuredHeight();
+                    widthHeight[0] = width;
+                    widthHeight[1] = height;
+                    hasMeasured = true;
+                }
+                return true;
+            }
+        });
+        // FIXME: 16/8/12 在回调中才能获取, 子线程, 不能直接返回
+        return widthHeight;
     }
 }

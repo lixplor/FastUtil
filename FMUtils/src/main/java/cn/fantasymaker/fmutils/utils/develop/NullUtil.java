@@ -20,31 +20,33 @@
  *     SOFTWARE.
  */
 
-package cn.fantasymaker.anutildemo;
-
-import android.app.Application;
-import android.content.Context;
-
-import cn.fantasymaker.fmutils.utils.FMUtils;
+package cn.fantasymaker.fmutils.utils.develop;
 
 /**
- * Created :  2016-09-06
+ * Created :  2016-07-28
  * Author  :  Fantasymaker
  * Web     :  http://blog.fantasymaker.cn
  * Email   :  me@fantasymaker.cn
  */
-public class BaseApplication extends Application {
+public class NullUtil {
 
-    private static Context sContext;
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sContext = this;
-        FMUtils.init(this);
+    /**
+     * if an object is null
+     *
+     * @param object object
+     * @return true if the object is null; otherwise false
+     */
+    public static boolean isNull(Object object) {
+        return object == null;
     }
 
-    public static Context getContext(){
-        return sContext;
+    /**
+     * if an object is not null
+     *
+     * @param object object
+     * @return true if the object is not null; otherwise false
+     */
+    public static boolean isNotNull(Object object) {
+        return object != null;
     }
 }

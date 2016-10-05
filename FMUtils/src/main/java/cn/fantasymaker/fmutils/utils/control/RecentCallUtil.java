@@ -20,31 +20,23 @@
  *     SOFTWARE.
  */
 
-package cn.fantasymaker.anutildemo;
-
-import android.app.Application;
-import android.content.Context;
-
-import cn.fantasymaker.fmutils.utils.FMUtils;
+package cn.fantasymaker.fmutils.utils.control;
 
 /**
- * Created :  2016-09-06
+ * Created :  2016-08-11
  * Author  :  Fantasymaker
  * Web     :  http://blog.fantasymaker.cn
  * Email   :  me@fantasymaker.cn
  */
-public class BaseApplication extends Application {
+public class RecentCallUtil {
 
-    private static Context sContext;
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sContext = this;
-        FMUtils.init(this);
-    }
-
-    public static Context getContext(){
-        return sContext;
-    }
+    /*
+    todo
+    获取最近呼叫
+    联系人
+    号码
+    时间
+    响铃时间
+    来电, 去电, 已接, 未接
+     */
 }

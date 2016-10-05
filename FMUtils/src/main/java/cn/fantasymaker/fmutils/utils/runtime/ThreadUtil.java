@@ -20,31 +20,25 @@
  *     SOFTWARE.
  */
 
-package cn.fantasymaker.anutildemo;
+package cn.fantasymaker.fmutils.utils.runtime;
 
-import android.app.Application;
-import android.content.Context;
-
-import cn.fantasymaker.fmutils.utils.FMUtils;
+import android.os.Looper;
 
 /**
- * Created :  2016-09-06
+ * Created :  2016-08-07
  * Author  :  Fantasymaker
  * Web     :  http://blog.fantasymaker.cn
  * Email   :  me@fantasymaker.cn
  */
-public class BaseApplication extends Application {
+public class ThreadUtil {
 
-    private static Context sContext;
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sContext = this;
-        FMUtils.init(this);
+    public static boolean isMain() {
+        return Looper.myLooper() == Looper.getMainLooper();
     }
 
-    public static Context getContext(){
-        return sContext;
+    public static String getThreadName(){
+        return Thread.currentThread().getName();
     }
+
+
 }

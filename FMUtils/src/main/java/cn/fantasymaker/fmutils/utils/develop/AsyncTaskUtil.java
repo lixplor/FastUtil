@@ -20,31 +20,59 @@
  *     SOFTWARE.
  */
 
-package cn.fantasymaker.anutildemo;
+package cn.fantasymaker.fmutils.utils.develop;
 
-import android.app.Application;
-import android.content.Context;
-
-import cn.fantasymaker.fmutils.utils.FMUtils;
+import android.os.Handler;
 
 /**
- * Created :  2016-09-06
+ * Created :  2016-08-13
  * Author  :  Fantasymaker
  * Web     :  http://blog.fantasymaker.cn
  * Email   :  me@fantasymaker.cn
  */
-public class BaseApplication extends Application {
+public class AsyncTaskUtil {
 
-    private static Context sContext;
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sContext = this;
-        FMUtils.init(this);
+    public static void run(SimpleAsyncTask simpleAsyncTask){
+        simpleAsyncTask.execute();
     }
 
-    public static Context getContext(){
-        return sContext;
+
+    public static abstract class SimpleAsyncTask {
+
+        //handle message to do
+        private Handler handler = new Handler(){
+            public void handleMessage(android.os.Message msg) {
+                afterThreadTask();
+            };
+        };
+
+        /**
+         * task to be done before child thread
+         */
+        public abstract void preThreadTask();
+
+        /**
+         * task to be done in child thread
+         */
+        public abstract void inThreadTask();
+
+        /**
+         * task to be done after child thread
+         */
+        public abstract void afterThreadTask();
+
+        /**
+         * execute tasks in sequence
+         */
+        public void execute(){
+            preThreadTask();
+            new Thread(){
+                public void run() {
+                    inThreadTask();
+                    handler.sendEmptyMessage(0);
+                };
+            }.start();
+        }
     }
 }

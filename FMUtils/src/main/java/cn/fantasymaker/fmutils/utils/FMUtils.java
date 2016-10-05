@@ -20,31 +20,40 @@
  *     SOFTWARE.
  */
 
-package cn.fantasymaker.anutildemo;
+package cn.fantasymaker.fmutils.utils;
 
 import android.app.Application;
 import android.content.Context;
-
-import cn.fantasymaker.fmutils.utils.FMUtils;
+import android.support.annotation.NonNull;
 
 /**
- * Created :  2016-09-06
+ * Created :  2016-08-11
  * Author  :  Fantasymaker
  * Web     :  http://blog.fantasymaker.cn
  * Email   :  me@fantasymaker.cn
  */
-public class BaseApplication extends Application {
+public class FMUtils {
 
     private static Context sContext;
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sContext = this;
-        FMUtils.init(this);
+    /**
+     * Acquire application context for utils
+     *
+     * @param application application
+     */
+    public static void init(@NonNull Application application) {
+        sContext = application;
     }
 
-    public static Context getContext(){
+    /**
+     * Get application context
+     *
+     * @return application context
+     */
+    public static Context getContext() {
+        if(sContext == null){
+            throw new UnsupportedOperationException("Not initialized! Please run 'init(Application application)' first!");
+        }
         return sContext;
     }
 }

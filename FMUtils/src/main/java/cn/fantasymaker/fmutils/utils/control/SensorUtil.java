@@ -20,31 +20,43 @@
  *     SOFTWARE.
  */
 
-package cn.fantasymaker.anutildemo;
+package cn.fantasymaker.fmutils.utils.control;
 
-import android.app.Application;
 import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 
 import cn.fantasymaker.fmutils.utils.FMUtils;
 
 /**
- * Created :  2016-09-06
+ * Created :  2016-08-03
  * Author  :  Fantasymaker
  * Web     :  http://blog.fantasymaker.cn
  * Email   :  me@fantasymaker.cn
  */
-public class BaseApplication extends Application {
+public class SensorUtil {
 
-    private static Context sContext;
+    private static Context sContext = FMUtils.getContext();
+    private static SensorManager sSensorManager = (SensorManager) sContext.getSystemService(Context.SENSOR_SERVICE);
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sContext = this;
-        FMUtils.init(this);
+    private SensorUtil() throws IllegalAccessException {
+        throw new IllegalAccessException("Instantiation is not allowed! Use static methods only!");
     }
 
-    public static Context getContext(){
-        return sContext;
+    public static Sensor getSensor(int type) {
+        return sSensorManager.getDefaultSensor(type);
+    }
+
+    public static boolean hasSensor(int type) {
+        return sSensorManager.getDefaultSensor(type) == null;
+    }
+
+    public static void registerSensorListener(Sensor sensor, int samplingPeriodUs, SensorEventListener sensorEventListener) {
+        sSensorManager.registerListener(sensorEventListener, sensor, samplingPeriodUs);
+    }
+
+    public static void unregisterSensorListener(Sensor sensor, SensorEventListener sensorEventListener) {
+        sSensorManager.unregisterListener(sensorEventListener, sensor);
     }
 }

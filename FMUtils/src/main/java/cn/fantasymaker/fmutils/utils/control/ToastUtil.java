@@ -20,31 +20,53 @@
  *     SOFTWARE.
  */
 
-package cn.fantasymaker.anutildemo;
+package cn.fantasymaker.fmutils.utils.control;
 
-import android.app.Application;
 import android.content.Context;
+import android.widget.Toast;
 
 import cn.fantasymaker.fmutils.utils.FMUtils;
 
 /**
- * Created :  2016-09-06
+ * Toast util
+ * <p/>
+ * Created :  2016-07-25
  * Author  :  Fantasymaker
  * Web     :  http://blog.fantasymaker.cn
  * Email   :  me@fantasymaker.cn
  */
-public class BaseApplication extends Application {
+public class ToastUtil {
 
-    private static Context sContext;
+    private static Context sContext = FMUtils.getContext();
+    private static Toast sToast;
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sContext = this;
-        FMUtils.init(this);
+    private ToastUtil() throws IllegalAccessException {
+        throw new IllegalAccessException("Instantiation is not allowed! Use static methods only!");
     }
 
-    public static Context getContext(){
-        return sContext;
+    /**
+     * show a toast in a short time
+     *
+     * @param msg the message to be displayed
+     */
+    public static void toastShort(String msg) {
+        if (sToast == null) {
+            sToast = Toast.makeText(sContext, "", Toast.LENGTH_SHORT);
+            sToast.show();
+        }
+        sToast.setText(msg);
+    }
+
+    /**
+     * show a toast in a long time
+     *
+     * @param msg the message to be displayed
+     */
+    public static void toastLong(String msg) {
+        if (sToast == null) {
+            sToast = Toast.makeText(sContext, "", Toast.LENGTH_LONG);
+            sToast.show();
+        }
+        sToast.setText(msg);
     }
 }

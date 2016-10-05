@@ -20,31 +20,35 @@
  *     SOFTWARE.
  */
 
-package cn.fantasymaker.anutildemo;
+package cn.fantasymaker.fmutils.utils.develop;
 
-import android.app.Application;
-import android.content.Context;
-
-import cn.fantasymaker.fmutils.utils.FMUtils;
+import java.io.Closeable;
+import java.io.IOException;
 
 /**
- * Created :  2016-09-06
+ * Created :  2016-07-25
  * Author  :  Fantasymaker
  * Web     :  http://blog.fantasymaker.cn
  * Email   :  me@fantasymaker.cn
  */
-public class BaseApplication extends Application {
+public class IOUtil {
 
-    private static Context sContext;
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sContext = this;
-        FMUtils.init(this);
+    private IOUtil() throws IllegalAccessException{
+        throw new IllegalAccessException("Instantiation is not allowed! Use static methods only!");
     }
 
-    public static Context getContext(){
-        return sContext;
+    /**
+     * Close a stream in a safe way and release the memory
+     * @param stream
+     */
+    public static void closeStream(Closeable stream) {
+        if (stream != null) {
+            try {
+                stream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            stream = null;
+        }
     }
 }

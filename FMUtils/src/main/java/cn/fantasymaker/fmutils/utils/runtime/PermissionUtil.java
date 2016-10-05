@@ -20,31 +20,41 @@
  *     SOFTWARE.
  */
 
-package cn.fantasymaker.anutildemo;
+package cn.fantasymaker.fmutils.utils.runtime;
 
-import android.app.Application;
+import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
 
 import cn.fantasymaker.fmutils.utils.FMUtils;
 
 /**
- * Created :  2016-09-06
+ * Created :  2016-09-03
  * Author  :  Fantasymaker
  * Web     :  http://blog.fantasymaker.cn
  * Email   :  me@fantasymaker.cn
  */
-public class BaseApplication extends Application {
+public class PermissionUtil {
 
-    private static Context sContext;
+    /*
+    todo
+    x检查是否有权限
+    x请求权限
+    获取当前权限
+     */
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sContext = this;
-        FMUtils.init(this);
+    private static Context sContext = FMUtils.getContext();
+
+    private PermissionUtil() throws IllegalAccessException {
+        throw new IllegalAccessException("Instantiation is not allowed! Use static methods only!");
     }
 
-    public static Context getContext(){
-        return sContext;
+    public static boolean hasPermission(String permission) {
+        return ActivityCompat.checkSelfPermission(sContext, permission) != PackageManager.PERMISSION_GRANTED;
+    }
+
+    public static void requestPermissions(Activity activity, String[] permissions, int requestCode) {
+        ActivityCompat.requestPermissions(activity, permissions, requestCode);
     }
 }

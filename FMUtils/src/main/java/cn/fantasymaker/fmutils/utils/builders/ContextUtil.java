@@ -20,31 +20,49 @@
  *     SOFTWARE.
  */
 
-package cn.fantasymaker.anutildemo;
+package cn.fantasymaker.fmutils.utils.builders;
 
-import android.app.Application;
 import android.content.Context;
+import android.content.pm.PackageManager;
 
 import cn.fantasymaker.fmutils.utils.FMUtils;
 
 /**
- * Created :  2016-09-06
+ * Created :  2016-08-11
  * Author  :  Fantasymaker
  * Web     :  http://blog.fantasymaker.cn
  * Email   :  me@fantasymaker.cn
  */
-public class BaseApplication extends Application {
+public class ContextUtil {
 
-    private static Context sContext;
+    private static Context sContext = FMUtils.getContext();
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sContext = this;
-        FMUtils.init(this);
+    private ContextUtil() throws IllegalAccessException {
+        throw new IllegalAccessException("Instantiation is not allowed! Use static methods only!");
     }
 
-    public static Context getContext(){
+    /**
+     * Get context of app itself
+     *
+     * @return context
+     */
+    public static Context getSelfContext() {
         return sContext;
+    }
+
+    /**
+     * Get context of other app by its package name
+     *
+     * @param packageName package name
+     * @return context of package
+     */
+    public static Context getPackageContext(String packageName) {
+        Context context = null;
+        try {
+            context = sContext.createPackageContext(packageName, Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return context;
     }
 }

@@ -20,31 +20,47 @@
  *     SOFTWARE.
  */
 
-package cn.fantasymaker.anutildemo;
+package cn.fantasymaker.fmutils.utils.builders;
 
-import android.app.Application;
-import android.content.Context;
+import android.os.Bundle;
+import android.os.IBinder;
 
-import cn.fantasymaker.fmutils.utils.FMUtils;
+import java.io.Serializable;
 
 /**
- * Created :  2016-09-06
+ * Created :  2016-08-07
  * Author  :  Fantasymaker
  * Web     :  http://blog.fantasymaker.cn
  * Email   :  me@fantasymaker.cn
  */
-public class BaseApplication extends Application {
+public class BundleBuilder {
 
-    private static Context sContext;
+    private Bundle mBundle;
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        sContext = this;
-        FMUtils.init(this);
+    public BundleBuilder(){
+        mBundle = new Bundle();
     }
 
-    public static Context getContext(){
-        return sContext;
+    public <T extends Serializable> BundleBuilder put(String key, T value) {
+        mBundle.putSerializable(key, value);
+        return this;
+    }
+
+    public BundleBuilder put(Bundle bundle){
+        mBundle.putAll(bundle);
+        return this;
+    }
+
+    public BundleBuilder put(String key, IBinder iBinder){
+        mBundle.putBinder(key, iBinder);
+        return this;
+    }
+
+    public <T> T get(String key) {
+        return (T) mBundle.getSerializable(key);
+    }
+
+    public Bundle build() {
+        return mBundle;
     }
 }
