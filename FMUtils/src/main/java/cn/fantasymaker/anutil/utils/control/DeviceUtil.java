@@ -31,7 +31,7 @@ import android.telephony.TelephonyManager;
 
 import java.util.List;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-03
@@ -50,7 +50,7 @@ public class DeviceUtil {
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static TelephonyManager sTelephonyManager = (TelephonyManager) sContext.getSystemService(Context.TELEPHONY_SERVICE);
     private static PackageManager sPackageManager = sContext.getPackageManager();
 

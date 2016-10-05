@@ -25,7 +25,7 @@ package cn.fantasymaker.anutil.utils.builders;
 import android.content.Context;
 import android.content.pm.PackageManager;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-11
@@ -35,7 +35,7 @@ import cn.fantasymaker.anutil.utils.Anutil;
  */
 public class ContextUtil {
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
 
     private ContextUtil() throws IllegalAccessException {
         throw new IllegalAccessException("Instantiation is not allowed! Use static methods only!");

@@ -32,7 +32,7 @@ import android.provider.CalendarContract.Calendars;
 import android.provider.CalendarContract.Events;
 import android.provider.CalendarContract.Reminders;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-11
@@ -60,7 +60,7 @@ public class CalendarUtil {
     private static final String URI_EVENTS = "content://com.android.calendar/events";
     private static final String URI_REMINDERS = "content://com.android.calendar/reminders";
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static ContentResolver sContentResolver = sContext.getContentResolver();
 
     private CalendarUtil() throws IllegalAccessException {

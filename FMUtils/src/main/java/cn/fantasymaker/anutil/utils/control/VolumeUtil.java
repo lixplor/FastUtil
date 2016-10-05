@@ -27,7 +27,7 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.os.Build;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-10
@@ -43,7 +43,7 @@ public class VolumeUtil {
     x获取音量
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static AudioManager sAudioManager = (AudioManager) sContext.getSystemService(Context.AUDIO_SERVICE);
 
     private VolumeUtil() throws IllegalAccessException {

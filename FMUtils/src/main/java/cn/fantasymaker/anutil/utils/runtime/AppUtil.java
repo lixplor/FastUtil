@@ -41,7 +41,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.List;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 import cn.fantasymaker.anutil.utils.convert.RadixUtil;
 import cn.fantasymaker.anutil.utils.develop.LogUtil;
 
@@ -58,7 +58,7 @@ public class AppUtil {
     仅用于本app本身, 不应处理其他app及其进程
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static PackageManager sPackageManager = sContext.getPackageManager();
 
     private AppUtil() throws IllegalAccessException {

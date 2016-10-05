@@ -27,7 +27,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-09-03
@@ -44,7 +44,7 @@ public class PermissionUtil {
     获取当前权限
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
 
     private PermissionUtil() throws IllegalAccessException {
         throw new IllegalAccessException("Instantiation is not allowed! Use static methods only!");

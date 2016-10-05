@@ -28,7 +28,7 @@ import android.content.Intent;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 import cn.fantasymaker.anutil.utils.builders.IntentUtil;
 
 /**
@@ -49,7 +49,7 @@ public class TelUtil {
     挂断电话
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static TelephonyManager sTelephonyManager = (TelephonyManager) sContext.getSystemService(Context.TELEPHONY_SERVICE);
 
     private TelUtil() throws IllegalAccessException {

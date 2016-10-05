@@ -29,7 +29,7 @@ import android.net.Uri;
 import android.provider.Settings;
 import android.view.WindowManager;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-10
@@ -44,7 +44,7 @@ public class BrightnessUtil {
      永久设置亮度
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
 
     private BrightnessUtil() throws IllegalAccessException {
         throw new IllegalAccessException("Instantiation is not allowed! Use static methods only!");

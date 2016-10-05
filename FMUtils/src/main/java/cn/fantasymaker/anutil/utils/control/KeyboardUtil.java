@@ -31,7 +31,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-07
@@ -53,7 +53,7 @@ public class KeyboardUtil {
      */
 
     private static int sKeyboardHeight = 0;
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static InputMethodManager sInputMethodManager = (InputMethodManager) sContext.getSystemService(Context.INPUT_METHOD_SERVICE);
     private static MyOnGlobalLayoutListener sMyOnGlobalLayoutListener;
 

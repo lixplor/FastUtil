@@ -36,7 +36,7 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-11
@@ -60,7 +60,7 @@ public class GpsUtil {
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static ContentResolver sContentResolver = sContext.getContentResolver();
     private static LocationManager sLocationManager = (LocationManager) sContext.getSystemService(Context.LOCATION_SERVICE);
 

@@ -30,7 +30,7 @@ import android.net.Uri;
 
 import java.io.File;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-07-25
@@ -40,7 +40,7 @@ import cn.fantasymaker.anutil.utils.Anutil;
  */
 public class DownloadUtil {
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
 
     private DownloadUtil() throws IllegalAccessException {
         throw new IllegalAccessException("Instantiation is not allowed! Use static methods only!");

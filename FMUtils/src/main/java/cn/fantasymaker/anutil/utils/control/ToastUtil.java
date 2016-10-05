@@ -25,7 +25,7 @@ package cn.fantasymaker.anutil.utils.control;
 import android.content.Context;
 import android.widget.Toast;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Toast util
@@ -37,7 +37,7 @@ import cn.fantasymaker.anutil.utils.Anutil;
  */
 public class ToastUtil {
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static Toast sToast;
 
     private ToastUtil() throws IllegalAccessException {

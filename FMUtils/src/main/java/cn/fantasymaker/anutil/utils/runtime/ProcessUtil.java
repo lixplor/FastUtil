@@ -28,7 +28,7 @@ import android.content.Context;
 
 import java.util.List;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-07-25
@@ -45,7 +45,7 @@ public class ProcessUtil {
 
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static ActivityManager sActivityManager = (ActivityManager) sContext.getSystemService(Context.ACTIVITY_SERVICE);
 
     private ProcessUtil() throws IllegalAccessException{

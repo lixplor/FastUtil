@@ -48,7 +48,7 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 import cn.fantasymaker.anutil.utils.builders.IntentUtil;
 import cn.fantasymaker.anutil.utils.develop.LogUtil;
 
@@ -89,7 +89,7 @@ public class SmsUtil {
     private static final String XML_TAG_TYPE = "type";
     private static final String XML_TAG_BODY = "body";
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static ContentResolver sContentResolver = sContext.getContentResolver();
     private static SmsReceiver receiver;
 

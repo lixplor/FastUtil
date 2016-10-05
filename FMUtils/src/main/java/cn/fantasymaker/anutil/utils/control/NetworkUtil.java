@@ -37,7 +37,7 @@ import java.net.SocketException;
 import java.util.Enumeration;
 import java.util.Locale;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-11
@@ -63,7 +63,7 @@ public class NetworkUtil {
     public static final int NETWORK_TYPE_3G = 3;
     public static final int NETWORK_TYPE_4G = 4;
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static ConnectivityManager sConnectivityManager = (ConnectivityManager) sContext.getSystemService(Context.CONNECTIVITY_SERVICE);
     private static WifiManager sWifiManager = (WifiManager) sContext.getSystemService(Context.WIFI_SERVICE);
 

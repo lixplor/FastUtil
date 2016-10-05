@@ -33,7 +33,7 @@ import android.service.notification.StatusBarNotification;
 
 import java.util.ArrayList;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * 1.Register below in AndroidManifest.xml
@@ -61,7 +61,7 @@ public class NotificationUtil {
     通知消息的获取, 删除, 清空
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static CustomNotificationListenerService sCustomNotificationListenerService;
     private static OnNotificationEventListener sOnNotificationEventListener;
 

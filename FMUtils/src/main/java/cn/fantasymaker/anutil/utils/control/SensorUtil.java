@@ -27,7 +27,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-03
@@ -37,7 +37,7 @@ import cn.fantasymaker.anutil.utils.Anutil;
  */
 public class SensorUtil {
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static SensorManager sSensorManager = (SensorManager) sContext.getSystemService(Context.SENSOR_SERVICE);
 
     private SensorUtil() throws IllegalAccessException {

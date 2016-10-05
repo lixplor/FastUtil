@@ -30,7 +30,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-07-25
@@ -46,7 +46,7 @@ public class MemoryUtil {
     获取某个应用占用内存
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static ActivityManager sActivityManager = (ActivityManager) sContext.getSystemService(Context.ACTIVITY_SERVICE);
     private static ActivityManager.MemoryInfo sMemoryInfo = new ActivityManager.MemoryInfo();
 

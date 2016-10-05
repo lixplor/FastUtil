@@ -37,7 +37,7 @@ import android.os.Looper;
 
 import java.util.UUID;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 import cn.fantasymaker.anutil.utils.builders.IntentUtil;
 
 /**
@@ -67,7 +67,7 @@ public class BluetoothUtil {
      */
 
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static BluetoothManager sBluetoothManager = (BluetoothManager) sContext.getSystemService(Context.BLUETOOTH_SERVICE);
     private static BluetoothAdapter sBluetoothAdapter = sBluetoothManager.getAdapter();
     private static Handler sHandler = new Handler(Looper.myLooper());

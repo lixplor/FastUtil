@@ -25,7 +25,7 @@ package cn.fantasymaker.anutil.utils.control;
 import android.content.Context;
 import android.os.Vibrator;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-11
@@ -46,7 +46,7 @@ public class VibratorUtil {
     <uses-permission android:name="android.permission.VIBRATE"/>
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static Vibrator sVibrator = (Vibrator) sContext.getSystemService(Context.VIBRATOR_SERVICE);
 
     private VibratorUtil() throws IllegalAccessException {

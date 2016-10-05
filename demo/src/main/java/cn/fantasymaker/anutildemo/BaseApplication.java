@@ -25,7 +25,7 @@ package cn.fantasymaker.anutildemo;
 import android.app.Application;
 import android.content.Context;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-09-06
@@ -41,7 +41,7 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         sContext = this;
-        Anutil.init(this);
+        FMUtils.init(this);
     }
 
     public static Context getContext(){

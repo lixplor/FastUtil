@@ -51,7 +51,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-11
@@ -90,7 +90,7 @@ public class ContactUtil {
     private static final String SELECTION_CONTACT_NICK = Data.CONTACT_ID + " = %s AND " + Data.MIMETYPE + " = '" + Nickname.CONTENT_ITEM_TYPE + "'";
     private static final String SELECTION_CONTACT_WEB = Data.CONTACT_ID + " = %s AND " + Data.MIMETYPE + " = '" + Website.CONTENT_ITEM_TYPE + "'";
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static ContentResolver sContentResolver = sContext.getContentResolver();
 
     //增

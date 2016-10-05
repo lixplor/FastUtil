@@ -47,7 +47,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-07-25
@@ -73,7 +73,7 @@ public class LogUtil {
     private static final String LOCAL_LOG_FILE_PREFIX = "LogUtil_";
 
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
 
     private static String sLogFileDirPath = sContext.getFilesDir().getAbsolutePath();
     private static String sLogFileName = "";

@@ -30,7 +30,7 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-07-25
@@ -40,7 +40,7 @@ import cn.fantasymaker.anutil.utils.Anutil;
  */
 public class ServiceUtil {
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static ActivityManager am = (ActivityManager) sContext.getSystemService(Context.ACTIVITY_SERVICE);
 
     private ServiceUtil() throws IllegalAccessException {

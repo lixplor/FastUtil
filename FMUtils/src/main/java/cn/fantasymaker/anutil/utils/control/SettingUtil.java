@@ -26,7 +26,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.net.Uri;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-11
@@ -43,7 +43,7 @@ public class SettingUtil {
     ?写入
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static ContentResolver sContentResolver = sContext.getContentResolver();
 
     private SettingUtil() throws IllegalAccessException {

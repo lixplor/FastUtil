@@ -30,7 +30,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.lang.reflect.Field;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-11
@@ -56,7 +56,7 @@ public class DatabaseUtil {
     public static String sCreateSql = "";
 
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     public static SQLiteDatabase sSQLiteDatabase;
 
 

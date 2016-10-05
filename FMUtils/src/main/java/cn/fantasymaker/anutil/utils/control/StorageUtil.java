@@ -35,7 +35,7 @@ import android.os.storage.StorageManager;
 
 import java.io.File;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 import cn.fantasymaker.anutil.utils.builders.ContextUtil;
 
 /**
@@ -55,7 +55,7 @@ public class StorageUtil {
     -挂载, 卸载, 格式化sd卡-
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static StorageManager sStorageManager = (StorageManager) sContext.getSystemService(Context.STORAGE_SERVICE);
 
     private StorageUtil() throws IllegalAccessException {

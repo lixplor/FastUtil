@@ -26,7 +26,7 @@ import android.content.Context;
 import android.content.pm.FeatureInfo;
 import android.content.pm.PackageManager;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-16
@@ -43,7 +43,7 @@ public class FeatureUtil {
 
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static PackageManager sPackageManager = sContext.getPackageManager();
 
     private FeatureUtil() throws IllegalAccessException {

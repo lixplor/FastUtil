@@ -81,7 +81,7 @@ import android.view.accessibility.CaptioningManager;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.TextServicesManager;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-07
@@ -91,7 +91,7 @@ import cn.fantasymaker.anutil.utils.Anutil;
  */
 public class ManagerUtil {
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
 
     private ManagerUtil() throws IllegalAccessException {
         throw new IllegalAccessException("Instantiation is not allowed! Use static methods only!");

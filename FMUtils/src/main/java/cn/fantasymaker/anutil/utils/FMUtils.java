@@ -32,7 +32,7 @@ import android.support.annotation.NonNull;
  * Web     :  http://blog.fantasymaker.cn
  * Email   :  me@fantasymaker.cn
  */
-public class Anutil {
+public class FMUtils {
 
     private static Context sContext;
 

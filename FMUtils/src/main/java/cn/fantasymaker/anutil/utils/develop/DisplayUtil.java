@@ -30,7 +30,7 @@ import android.view.Surface;
 import android.view.View;
 import android.view.WindowManager;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-07-25
@@ -40,7 +40,7 @@ import cn.fantasymaker.anutil.utils.Anutil;
  */
 public class DisplayUtil {
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static WindowManager sWindowManager = (WindowManager) sContext.getSystemService(Context.WINDOW_SERVICE);
     private static DisplayMetrics sOutMetrics = new DisplayMetrics();
 

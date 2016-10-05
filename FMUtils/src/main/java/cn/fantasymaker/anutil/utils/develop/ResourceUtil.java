@@ -28,7 +28,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.DimenRes;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-07-28
@@ -38,7 +38,7 @@ import cn.fantasymaker.anutil.utils.Anutil;
  */
 public class ResourceUtil {
     
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
 
     private ResourceUtil() throws IllegalAccessException {
         throw new IllegalAccessException("Instantiation is not allowed! Use static methods only!");

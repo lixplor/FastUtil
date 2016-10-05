@@ -29,7 +29,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.os.Build;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-07
@@ -52,7 +52,7 @@ public class AlarmUtil {
     闹钟提醒方式(通知, 震动, 响铃, led, 短信, 电话, email, 自定义回调)
      */
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static AlarmManager sAlarmManager = (AlarmManager) sContext.getSystemService(Context.ALARM_SERVICE);
 
     private AlarmUtil() throws IllegalAccessException {

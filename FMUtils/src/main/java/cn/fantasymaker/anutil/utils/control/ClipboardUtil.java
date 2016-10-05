@@ -31,7 +31,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
-import cn.fantasymaker.anutil.utils.Anutil;
+import cn.fantasymaker.anutil.utils.FMUtils;
 
 /**
  * Created :  2016-08-07
@@ -50,7 +50,7 @@ public class ClipboardUtil {
 
     private static final String LABEL = ClipboardUtil.class.getSimpleName();
 
-    private static Context sContext = Anutil.getContext();
+    private static Context sContext = FMUtils.getContext();
     private static ClipboardManager sClipboardManager = (ClipboardManager) sContext.getSystemService(Context.CLIPBOARD_SERVICE);
 
     private ClipboardUtil() throws IllegalAccessException {
