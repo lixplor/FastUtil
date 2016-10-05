@@ -1,4 +1,4 @@
-package cn.fantasymaker.anutildemo;
+package cn.fantasymaker.fmutilsdemo;
 
 import org.junit.Test;
 

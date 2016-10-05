@@ -20,7 +20,7 @@
  *     SOFTWARE.
  */
 
-package cn.fantasymaker.anutildemo;
+package cn.fantasymaker.fmutilsdemo;
 
 /**
  * Created :  2016-09-06
