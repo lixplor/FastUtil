@@ -22,7 +22,6 @@
 
 package cn.fantasymaker.fmutils.utils;
 
-import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
@@ -39,10 +38,10 @@ public class FMUtils {
     /**
      * Acquire application context for utils
      *
-     * @param application application
+     * @param context Any context. It will use context.getApplicationContext() to retrive global application context.
      */
-    public static void init(@NonNull Application application) {
-        sContext = application;
+    public static void init(@NonNull Context context) {
+        sContext = context.getApplicationContext();
     }
 
     /**
@@ -51,8 +50,8 @@ public class FMUtils {
      * @return application context
      */
     public static Context getContext() {
-        if(sContext == null){
-            throw new UnsupportedOperationException("Not initialized! Please run 'init(Application application)' first!");
+        if (sContext == null) {
+            throw new UnsupportedOperationException("Not initialized! Please call 'init(Context context)' first!");
         }
         return sContext;
     }
