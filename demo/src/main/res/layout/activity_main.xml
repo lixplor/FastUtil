@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cn.fantasymaker.fmutilsdemo.MainActivity">
+    tools:context="com.lixplor.fastutildemo.MainActivity">
 
     <TextView
         android:id="@+id/tv"
