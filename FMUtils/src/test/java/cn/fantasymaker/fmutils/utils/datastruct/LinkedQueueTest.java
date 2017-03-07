@@ -8,9 +8,9 @@ import static org.junit.Assert.*;
 
 /**
  * Created :  2016-10-04
- * Author  :  Fantasymaker
- * Web     :  http://blog.fantasymaker.cn
- * Email   :  me@fantasymaker.cn
+ * Author  :  Lixplor
+ * Web     :  http://blog.lixplor.com
+ * Email   :  me@lixplor.com
  */
 public class LinkedQueueTest {
     @Test

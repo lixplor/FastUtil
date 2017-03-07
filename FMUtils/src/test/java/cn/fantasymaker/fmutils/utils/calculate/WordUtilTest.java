@@ -10,9 +10,9 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Created :  2016-08-22
- * Author  :  Fantasymaker
- * Web     :  http://blog.fantasymaker.cn
- * Email   :  me@fantasymaker.cn
+ * Author  :  Lixplor
+ * Web     :  http://blog.lixplor.com
+ * Email   :  me@lixplor.com
  */
 public class WordUtilTest {
 
