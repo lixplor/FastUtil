@@ -30,6 +30,7 @@ import android.os.SystemClock;
 import android.provider.Settings;
 import android.service.notification.StatusBarNotification;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.view.Surface;
 import android.view.View;
 import android.widget.Button;
@@ -39,6 +40,8 @@ import android.widget.TextView;
 
 import java.io.File;
 import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -178,9 +181,9 @@ public class MainActivity extends AppCompatActivity {
 
 //        testScreenRecord();
 
-        ShellCmdUtil.CommandResult commandResult = ShellCmdUtil.execCommand(ShellCmdUtil.COMMAND_ADB_STOP, false);
-        LogUtil.d(commandResult.toString());
-        ToastUtil.toastLong(commandResult.toString());
+//        ShellCmdUtil.CommandResult commandResult = ShellCmdUtil.execCommand(ShellCmdUtil.COMMAND_ADB_STOP, false);
+//        LogUtil.d(commandResult.toString());
+//        ToastUtil.toastLong(commandResult.toString());
 
 //        ShellCmdUtil.CommandResult commandResult = ShellCmdUtil.execCommand("echo hello", false);
 //        LogUtil.d("result=" + commandResult);
@@ -188,6 +191,35 @@ public class MainActivity extends AppCompatActivity {
 //        List<ContactUtil.ContactBean> allContact = ContactUtil.getAllContact();
 //        LogUtil.d("contacts size =" + allContact.size());
 
+        try {
+            testEnc();
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private void testEnc() throws InvalidKeyException, NoSuchAlgorithmException {
+        String src = "a=200001&b=newbucket&k=AKIDUfLUEUigQiXqm7CVSspKJnuaiIKtxqAv&e=1438669115&t=1436077115&r=11162&f=";
+        String key = "bLcPnl88WU30VY57ipRhSePfPdOfSruK";
+        byte[] enc = EncryptUtil.hmacSha1Encrypt(key.getBytes(), src.getBytes());
+        byte[] srcB = src.getBytes();
+        byte[] total = new byte[enc.length + srcB.length];
+        for(int i = 0; i < total.length; i++){
+            if(i < enc.length){
+                total[i] = enc[i];
+            }else{
+                total[i] = srcB[i - enc.length];
+            }
+        }
+        String e = EncryptUtil.base64EncodeToString(enc, Base64.DEFAULT);
+        String s = EncryptUtil.base64EncodeToString(src, Base64.DEFAULT);
+        LogUtil.d("es=" + e + "\n" + s);
+
+        String base = EncryptUtil.base64EncodeToString(total, Base64.DEFAULT);
+        LogUtil.d(base);
     }
 
     private void testScreenRecord() {
