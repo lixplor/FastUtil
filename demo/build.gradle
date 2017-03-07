@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "cn.fantasymaker.fmutilsdemo"
+        applicationId "com.lixplor.fastutildemo"
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
@@ -23,5 +23,5 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
-    compile project(':FMUtils')
+    compile project(':FastUtil')
 }
